@@ -1,0 +1,37 @@
+import tkinter as tk
+from PIL import Image, ImageTk
+
+
+def ejecutar_codigo_imagen1(event):
+    # Código a ejecutar cuando se hace clic en la primera imagen
+    import mano_3
+    print("Corriendo juego burbujas")
+
+
+def ejecutar_codigo_imagen2(event):
+    # Código a ejecutar cuando se hace clic en la segunda imagen
+    import tetrisSpyder
+    print("Corriendo juego  Tetris")
+
+
+
+# Crear la ventana principal
+ventana = tk.Tk()
+ventana.title("Interfaz Gráfica Juegos")
+
+# Cargar la primera imagen
+imagen1 = Image.open("1 interface/2 burbujas/burbujas.png")
+imagen1 = ImageTk.PhotoImage(imagen1)
+etiqueta_imagen1 = tk.Label(ventana, image=imagen1)
+etiqueta_imagen1.bind("<Button-1>", ejecutar_codigo_imagen1)
+etiqueta_imagen1.pack()
+
+# Cargar la segunda imagen
+imagen2 = Image.open("1 interface/3 Tetris/TETRIS.png")
+imagen2 = ImageTk.PhotoImage(imagen2)
+etiqueta_imagen2 = tk.Label(ventana, image=imagen2)
+etiqueta_imagen2.bind("<Button-1>", ejecutar_codigo_imagen2)
+etiqueta_imagen2.pack()
+
+# Iniciar el bucle de la interfaz gráfica
+ventana.mainloop()
